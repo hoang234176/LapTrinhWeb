@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import com.model.User;
 
 public class UserDAO {
-	private String JDBC_URL = "jdbc:mysql://localhost:3306/Manage_Library";
+	private String JDBC_URL = "jdbc:mysql://localhost:3307/Manage_Library";
     private String JDBC_fname = "root";
     private String JDBC_PASSWORD = "12345678";
     
