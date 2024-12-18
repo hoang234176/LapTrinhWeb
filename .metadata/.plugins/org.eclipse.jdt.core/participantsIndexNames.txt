@@ -1,0 +1,11 @@
+INDEX VERSION 1.134
+D:\Project_WebJava\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1375045178.index
+\Manage_Library\src\main\java
+D:\Project_WebJava\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3329242642.index
+\Manage_Library\src\main\java
+D:\Project_WebJava\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2618580197.index
+\Manage_Library\src\main\java
+D:\Project_WebJava\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\448804764.index
+\Manage_Library\src\main\java
+D:\Project_WebJava\LapTrinhWeb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3832201621.index
+\Manage_Library\src\main\java

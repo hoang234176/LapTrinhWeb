@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+D:\Project_WebJava\LapTrinhWeb\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3287530637.index
+205368906.index
+1817510335.index
+590381523.index
+859338872.index
+3726339009.index
