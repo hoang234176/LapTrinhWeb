@@ -1,9 +1,0 @@
-127.0.0.1 - - [18/Dec/2024:17:21:15 +0700] "GET / HTTP/1.1" 404 752
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:21:17 +0700] "GET /Manage_Library/LoginController HTTP/1.1" 404 203
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:21:18 +0700] "GET /favicon.ico HTTP/1.1" 404 763
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:21:43 +0700] "GET /Manage_Library/LoginController HTTP/1.1" 404 203
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:25:20 +0700] "GET /Manage_Library/LoginController HTTP/1.1" 200 26
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:25:40 +0700] "GET /Manage_Library/auth/login.jsp HTTP/1.1" 200 1541
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:25:40 +0700] "GET /Manage_Library/assets/images/logo.jpg HTTP/1.1" 200 22545
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:25:40 +0700] "GET /Manage_Library/assets/css/style.css HTTP/1.1" 200 6479
-0:0:0:0:0:0:0:1 - - [18/Dec/2024:17:25:49 +0700] "POST /Manage_Library/LoginController HTTP/1.1" 200 153
