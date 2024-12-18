@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.model.User;
 
@@ -15,6 +17,7 @@ public class UserDAO {
     
     private static final String LOGIN_USER = "SELECT * FROM users WHERE email = ? AND password = ?";
     private static final String INSERT_USER = "INSERT INTO Users (fname, password, email, role) VALUES (?, ?, ?, ?)";
+    private static final String ALL_USER = "SELECT * FROM users WHERE role = 'User'";
     
     public User loginUser(String email, String password) {
     	int user_id = 1;
@@ -77,5 +80,35 @@ public class UserDAO {
             e.printStackTrace();
         }
     	return false;
+    }
+    
+    public List<User> getAllUsers(){
+    	List<User> users = new ArrayList<>();
+    	try {
+    		// Step 1: Tải driver MySQL
+    		Class.forName("com.mysql.cj.jdbc.Driver");
+    		
+    		// Step 2: Tạo kết nối
+    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_fname, JDBC_PASSWORD);
+    		
+    		// Step 3: Tạo và thực thi câu lệnh SQL
+    		PreparedStatement preparedStatement = connection.prepareStatement(ALL_USER);
+    		ResultSet resultSet = preparedStatement.executeQuery();
+    		
+    		while (resultSet.next()) {
+    			User user = new User();
+    			user.setUser_id(resultSet.getInt("user_id"));
+    			user.setFname(resultSet.getString("fname"));
+    			user.setPassword(resultSet.getString("password"));
+    			user.setEmail(resultSet.getString("email"));
+    			user.setRole(resultSet.getString("role"));
+    			users.add(user);
+    		}
+    		
+    		
+    	} catch (Exception e) {
+            e.printStackTrace();
+        }
+		return users;
     }
 }

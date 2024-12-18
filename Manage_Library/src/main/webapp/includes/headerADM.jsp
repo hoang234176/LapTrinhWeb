@@ -8,16 +8,17 @@
 <link rel="stylesheet" href="/Manage_Library/assets/css/style.css">
 </head>
 <body>
-    <header class="header">
+    <header>
 		<div class="logo">
-            <a href="/Manage_Library/index.jsp"><img src="/Manage_Library/assets/images/logo.jpg" alt="Library Logo"></a>
+            <a href="/Manage_Library/admin/dashboard.jsp"><img src="/Manage_Library/assets/images/logo.jpg" alt="Library Logo"></a>
         </div>
-        <nav class="navigation">
-            <a href="#dashboard">Dashboard</a>
-            <a href="#books">Quản lí sách</a>
-            <a href="#users">Quản lí người dùng</a>
-            
+        <nav>
+            <ul>
+                <li><a href="/Manage_Library/admin/dashboard.jsp">Dashboard</a></li>
+                <li><a href="/Manage_Library/admin/manageUsers.jsp">Quản lý người dùng</a></li>
+                <li><a href="/Manage_Library/admin/manageBooks.jsp">Quản lý Sách</a></li>
+                <li><a href="/Manage_Library/auth/logout.jsp">Đăng xuất</a></li>
+            </ul>
         </nav>
-        <button class="logout-btn">Đăng xuất</button>
     </header>
 

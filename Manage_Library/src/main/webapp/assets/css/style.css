@@ -326,3 +326,77 @@ body {
     border-radius: 4px;
     cursor: pointer
 }
+
+/* Admin: Manage User */
+/* Căn giữa bảng trong container */
+.user-table.user-management {
+    width: 80%; /* Chiều rộng bảng */
+    margin: 20px auto; /* Căn giữa bảng */
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Màu nền nhạt */
+    border-radius: 8px; /* Bo góc bảng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    overflow: hidden;
+}
+
+/* Tiêu đề bảng */
+.user-table.user-management .table-header {
+    padding: 12px;
+    background-color: #4CAF50; /* Màu xanh lá đậm */
+    color: white;
+    text-align: center; /* Căn giữa văn bản */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Dòng dữ liệu */
+.user-table.user-management .table-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.user-table.user-management .table-cell {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    text-align: left; /* Căn lề trái */
+}
+
+/* Nút Xóa */
+.user-table.user-management .delete-button {
+    background-color: #e74c3c; /* Màu đỏ */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.user-table.user-management .delete-button:hover {
+    background-color: #c0392b;
+}
+
+.user-table.user-management .delete-button:focus {
+    outline: none;
+}
+
+/* Dòng không có dữ liệu */
+.user-table.user-management .no-data {
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* Hiệu ứng hover */
+.user-table.user-management .table-row:hover {
+    background-color: #f1f1f1; /* Màu nền khi hover */
+}
+
+/* Căn chỉnh các ô tiêu đề và dữ liệu */
+.user-table.user-management th.table-header,
+.user-table.user-management td.table-cell {
+    text-align: center; /* Căn giữa văn bản trong các ô */
+}

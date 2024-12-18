@@ -19,6 +19,7 @@
                 <li><a href="/Manage_Library/index.jsp">Trang chủ</a></li>
                 <li><a href="/Manage_Library/auth/login.jsp">Đăng nhập</a></li>
                 <li><a href="/Manage_Library/auth/register.jsp">Đăng ký</a></li>
+                <li><a href="/Manage_Library/auth/logout.jsp">Đăng xuất</a></li>
             </ul>
         </nav>
     </header>

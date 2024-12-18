@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Quản lý sách</title>
 </head>
 <body>
-
+	<jsp:include page="../includes/headerADM.jsp"/>
+	<h1>Đây là trang Quản lý sách</h1>
+	<jsp:include page="../includes/footer.jsp"/>
 </body>
 </html>
