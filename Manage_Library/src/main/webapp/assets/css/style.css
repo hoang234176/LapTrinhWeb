@@ -326,3 +326,75 @@ body {
     border-radius: 4px;
     cursor: pointer
 }
+/*BookManager*/
+/* CSS dành riêng cho phần quản lý sách */
+body.book-management {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header.book-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header.book-header h1 {
+    margin: 0;
+}
+
+table.book-table {
+    width: 90%;
+    margin: 2rem auto;
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+table.book-table th, table.book-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table.book-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+table.book-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table.book-table tr:hover {
+    background-color: #ddd;
+}
+
+div.book-form-container {
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+div.book-form-container input,
+div.book-form-container button {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+div.book-form-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+div.book-form-container button:hover {
+    background-color: #45a049;
+}
