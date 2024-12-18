@@ -14,7 +14,7 @@ public class Book {
 		super();
 	}
 
-	public Book(String title, String author, String publisher, String publication_year, String isbn,
+	public Book(int book_id, String title, String author, String publisher, String publication_year, String isbn,
 			String category, String quantity) {
 		super();
 		this.book_id = book_id;

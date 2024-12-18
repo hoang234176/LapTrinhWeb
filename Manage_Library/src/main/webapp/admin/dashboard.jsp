@@ -9,7 +9,22 @@
 </head>
 <body>
 	<jsp:include page="../includes/headerADM.jsp"/>
-	<h1>Đây là trang Admin</h1>
+	
+	<div class="management-container">
+	    <div class="management-box">
+	        <h4>Sách</h4>
+	        <h6>Số loại sách: </h6>
+	        <h6>Tổng số lượng sách: </h6>
+	        <a href="manageBooks.jsp" class="button-manageBooks">Quản lý Sách</a>
+	    </div>
+	    <div class="management-box">
+	        <h4>Người dùng</h4>
+	        <h6>Tổng số người dùng: </h6>
+	        <a href="manageUsers.jsp" class="button-manageUser">Quản lý người dùng</a>
+	    </div>
+	</div>
+	<a href="addBook.jsp" class="button-addbook">Thêm sách</a><br>
+
 	<jsp:include page="../includes/footer.jsp"/>
 </body>
 </html>

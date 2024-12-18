@@ -12,7 +12,7 @@ import com.model.User;
 
 public class UserDAO {
 	private String JDBC_URL = "jdbc:mysql://localhost:3306/Manage_Library";
-    private String JDBC_fname = "root";
+    private String JDBC_USER = "root";
     private String JDBC_PASSWORD = "12345678";
     
     private static final String LOGIN_USER = "SELECT * FROM users WHERE email = ? AND password = ?";
@@ -29,7 +29,7 @@ public class UserDAO {
     		Class.forName("com.mysql.cj.jdbc.Driver");
     		
     		// Step 2: Tạo kết nối
-    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_fname, JDBC_PASSWORD);
+    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
     		
     		// Step 3: Tạo và thực thi câu lệnh SQL
     		PreparedStatement preparedStatement = connection.prepareStatement(LOGIN_USER);
@@ -63,7 +63,7 @@ public class UserDAO {
     		Class.forName("com.mysql.cj.jdbc.Driver");
     		
     		// Step 2: Tạo kết nối
-    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_fname, JDBC_PASSWORD);
+    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
     		
     		// Step 3: Tạo và thực thi câu lệnh SQL
     		PreparedStatement preparedStatement = connection.prepareStatement(INSERT_USER);
@@ -89,7 +89,7 @@ public class UserDAO {
     		Class.forName("com.mysql.cj.jdbc.Driver");
     		
     		// Step 2: Tạo kết nối
-    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_fname, JDBC_PASSWORD);
+    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
     		
     		// Step 3: Tạo và thực thi câu lệnh SQL
     		PreparedStatement preparedStatement = connection.prepareStatement(ALL_USER);
