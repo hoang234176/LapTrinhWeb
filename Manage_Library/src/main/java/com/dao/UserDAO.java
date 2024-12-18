@@ -9,11 +9,11 @@ import com.model.User;
 
 
 public class UserDAO {
-	private String JDBC_URL = "jdbc:mysql://localhost:3307/Manage_Library";
+	private String JDBC_URL = "jdbc:mysql://localhost:3306/Manage_Library";
     private String JDBC_fname = "root";
     private String JDBC_PASSWORD = "12345678";
     
-    private static final String LOGIN_LOGIN = "SELECT * FROM users WHERE email = ? AND password = ?";
+    private static final String LOGIN_USER = "SELECT * FROM users WHERE email = ? AND password = ?";
     private static final String INSERT_USER = "INSERT INTO Users (fname, password, email, role) VALUES (?, ?, ?, ?)";
     
     public User loginUser(String email, String password) {
@@ -29,7 +29,7 @@ public class UserDAO {
     		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_fname, JDBC_PASSWORD);
     		
     		// Step 3: Tạo và thực thi câu lệnh SQL
-    		PreparedStatement preparedStatement = connection.prepareStatement(LOGIN_LOGIN);
+    		PreparedStatement preparedStatement = connection.prepareStatement(LOGIN_USER);
     		preparedStatement.setString(1, email);
     		preparedStatement.setString(2, password);
 		    ResultSet resultSet = preparedStatement.executeQuery();
