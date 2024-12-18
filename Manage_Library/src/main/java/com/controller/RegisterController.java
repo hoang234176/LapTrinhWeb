@@ -44,6 +44,7 @@ public class RegisterController extends HttpServlet {
 		String role = "User";
 		
 		User user = new User();
+		user.setUser_id(1);
 		user.setFname(fname);
 		user.setPassword(password);
 		user.setEmail(email);

@@ -7,8 +7,9 @@ import java.sql.ResultSet;
 
 import com.model.User;
 
+
 public class UserDAO {
-	private String JDBC_URL = "jdbc:mysql://localhost:3306/Manage_Library";
+	private String JDBC_URL = "jdbc:mysql://localhost:3307/Manage_Library";
     private String JDBC_fname = "root";
     private String JDBC_PASSWORD = "12345678";
     
@@ -16,6 +17,7 @@ public class UserDAO {
     private static final String INSERT_USER = "INSERT INTO Users (fname, password, email, role) VALUES (?, ?, ?, ?)";
     
     public User loginUser(String email, String password) {
+    	int user_id = 1;
     	String role = null;
     	String fname = null;
     	User user = null;
@@ -36,7 +38,7 @@ public class UserDAO {
 		    	//Lấy giá trị role để xử lý duy trì đăng nhập
 		    	role = resultSet.getString("role");
 		    	fname = resultSet.getString("fname");
-		    	user = new User(fname, email, password, role);
+		    	user = new User(user_id, fname, email, password, role);
 		    }
 		   
 		    // Đóng kết nối
