@@ -268,3 +268,61 @@ footer p {
     font-weight: bold;
     text-align: center;
 }
+
+/*Header ADM*/
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 0 15px; /* Thêm khoảng cách ngang giữa các liên kết */
+}
+
+
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer
+}

@@ -24,7 +24,7 @@
   	<location>/errorPage/er500.jsp</location>
   </error-page>
   
-  <!--Bảo mật các trang admin-->
+ <!-- Bảo mật các trang admin
   <security-constraint>
   	<web-resource-collection>
   		<web-resource-name>Admin Pages</web-resource-name>
@@ -36,8 +36,8 @@
   	</auth-constraint>
   </security-constraint>
   
-  <!--Định nghĩa vai trò bảo mật-->
+  Định nghĩa vai trò bảo mật
   <security-role>
   	<role-name>Admin</role-name>
-  </security-role>
+  </security-role>-->
 </web-app>
