@@ -400,3 +400,71 @@ body {
 .user-table.user-management td.table-cell {
     text-align: center; /* Căn giữa văn bản trong các ô */
 }
+  
+/* Add Book */
+/* Container chính của form */
+.book-form-container {
+    width: 50%; /* Chiều rộng của form */
+    margin: 30px auto; /* Căn giữa form */
+    padding: 20px 30px;
+    background-color: #f4f4f4; /* Màu nền nhạt */
+    border-radius: 10px; /* Bo góc form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    font-family: Arial, sans-serif;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Tiêu đề của form */
+.book-form-container h3 {
+    font-size: 24px;
+    color: #4CAF50; /* Màu xanh lá cây */
+    margin-bottom: 20px;
+}
+
+/* Các input trong form */
+.book-form-container input[type="text"],
+.book-form-container input[type="number"] {
+    width: 90%; /* Chiều rộng của input */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Viền màu xám nhạt */
+    border-radius: 5px; /* Bo góc input */
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Placeholder style */
+.book-form-container input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Nút bấm trong form */
+.book-form-container button {
+    width: 95%; /* Chiều rộng nút bấm */
+    padding: 12px;
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white; /* Màu chữ */
+    border: none;
+    border-radius: 5px; /* Bo góc nút */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+/* Hover và focus của nút */
+.book-form-container button:hover {
+    background-color: #45a049; /* Màu xanh lá đậm hơn khi hover */
+}
+
+.book-form-container button:focus {
+    outline: none;
+}
+
+/* Hiệu ứng hover và focus của input */
+.book-form-container input:focus {
+    border-color: #4CAF50; /* Viền màu xanh khi focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
