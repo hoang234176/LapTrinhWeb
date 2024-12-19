@@ -27,6 +27,7 @@ CREATE TABLE Books (
     isbn VARCHAR(20) UNIQUE,
     category INT,
     quantity INT DEFAULT 1,
+    image VARCHAR(255),
     FOREIGN KEY (category) REFERENCES Categories(category_id)
 );
 
@@ -49,12 +50,12 @@ INSERT INTO Categories (category_name) VALUES
 ('History'),
 ('Biography');
 
-INSERT INTO Books (title, author, publisher, publication_year, isbn, category, quantity) VALUES
-('To Kill a Mockingbird', 'Harper Lee', 'J.B. Lippincott & Co.', 1960, '9780060935467', 1, 5),
-('A Brief History of Time', 'Stephen Hawking', 'Bantam Books', 1988, '9780553380163', 3, 3),
-('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 'Harvill Secker', 2011, '9780099590088', 4, 4),
-('The Diary of a Young Girl', 'Anne Frank', 'Contact Publishing', 1947, '9780553296983', 5, 2),
-('1984', 'George Orwell', 'Secker & Warburg', 1949, '9780451524935', 1, 6);
+INSERT INTO Books (title, author, publisher, publication_year, isbn, category, quantity, image) VALUES
+('To Kill a Mockingbird', 'Harper Lee', 'J.B. Lippincott & Co.', 1960, '9780060935467', 1, 5, 'ToKillaMockingbird.jpg'),
+('A Brief History of Time', 'Stephen Hawking', 'Bantam Books', 1988, '9780553380163', 3, 3, 'BriefHistoryTime.jpg'),
+('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 'Harvill Secker', 2011, '9780099590088', 4, 4, 'ABriefHistoryofHumankind.jpg'),
+('The Diary of a Young Girl', 'Anne Frank', 'Contact Publishing', 1947, '9780553296983', 5, 2, 'TheDiaryofaYoungGirl.jpg'),
+('1984', 'George Orwell', 'Secker & Warburg', 1949, '9780451524935', 1, 6, '1984.jpg');
 
 INSERT INTO Users (fname, password, email, role) VALUES
 ('admin', 'admin123', 'admin@example.com', 'Admin'),
