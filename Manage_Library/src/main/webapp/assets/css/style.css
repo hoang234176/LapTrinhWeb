@@ -16,18 +16,19 @@ body {
 }
 
 /* Header */
+/* Header chính */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #004080; /* Màu xanh đậm */
+    background-color: #4CAF50; /* Màu xanh lá cây */
     padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Logo */
 header .logo img {
-    height: 75px; /* Kích thước của logo */
+    height: 50px; /* Chiều cao logo */
     width: auto;
 }
 
@@ -35,121 +36,178 @@ header .logo img {
 header nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 header nav ul li {
-    margin-left: 20px; /* Khoảng cách giữa các mục trong navigation */
+    margin: 0 15px; /* Khoảng cách giữa các mục */
 }
 
+/* Link trong menu */
 header nav ul li a {
     text-decoration: none;
-    color: #ffffff; /* Màu chữ trắng */
     font-size: 16px;
     font-weight: bold;
-    transition: color 0.3s ease;
+    color: white; /* Màu chữ */
+    background-color: #4CAF50; /* Màu nền của nút */
+    padding: 10px 20px;
+    border-radius: 5px; /* Bo góc */
+    transition: all 0.3s ease; /* Hiệu ứng khi hover */
 }
 
+/* Hover cho link */
 header nav ul li a:hover {
-    color: #ffd700; /* Màu vàng khi hover */
+    background-color: #45a049; /* Màu nền khi hover */
+    color: #f9f9f9; /* Màu chữ sáng hơn */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng khi hover */
+    transform: scale(1.05); /* Phóng to nhẹ khi hover */
+}
+
+/* Khi link đang được chọn (active) */
+header nav ul li a.active {
+    background-color: #2e7d32; /* Màu xanh đậm hơn */
+    color: #ffffff;
+    pointer-events: none; /* Không thể nhấn vào */
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-wrap: wrap; /* Cho phép dòng mới khi màn hình hẹp */
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu dọc */
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        width: 100%; /* Nút chiếm toàn bộ chiều ngang */
         text-align: center;
     }
-    
-    header nav ul {
-        margin-top: 10px;
-        flex-direction: column;
-    }
-    
-    header nav ul li {
-        margin: 5px 0;
+}
+
+/* Nút "Đăng xuất" */
+header nav ul li a.logout-btn {
+    background-color: #e53935; /* Màu đỏ */
+    color: white; /* Màu chữ trắng */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px; /* Bo góc */
+    transition: all 0.3s ease; /* Hiệu ứng hover */
+}
+
+/* Hiệu ứng hover cho nút "Đăng xuất" */
+header nav ul li a.logout-btn:hover {
+    background-color: #d32f2f; /* Màu đỏ đậm hơn khi hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Đổ bóng */
+    transform: scale(1.05); /* Phóng to nhẹ */
+}
+
+/* Responsive cho nút đăng xuất */
+@media (max-width: 768px) {
+    header nav ul li a.logout-btn {
+        width: 100%; /* Đầy chiều ngang */
+        text-align: center;
     }
 }
+
 
 /* Footer */
+/* Footer Styles */
 footer {
-    background-color: #004080; /* Màu nền xanh đậm giống header */
-    color: #ffffff; /* Màu chữ trắng */
-    text-align: center;
-    padding: 15px 20px;
-    font-size: 14px;
-    margin-top: 20px;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    background-color: #2c3e50; /* Màu nền tối */
+    color: #ecf0f1; /* Màu chữ sáng */
+    text-align: center; /* Canh giữa nội dung */
+    padding: 20px 10px; /* Khoảng cách trên dưới và hai bên */
+    font-size: 14px; /* Kích thước chữ */
+    border-top: 2px solid #34495e; /* Đường viền trên */
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
-footer p {
-    margin: 5px 0; /* Khoảng cách cho dòng chữ */
-}
-
-/* Page Login */
-/* Container chính của form */
-.form_login {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff; /* Màu nền trắng */
-    border: 1px solid #ddd; /* Viền nhạt */
-    border-radius: 8px; /* Góc bo tròn */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-/* Tiêu đề form */
-.form_login h2 {
-    margin-bottom: 20px;
-    color: #333; /* Màu chữ đậm */
-    font-size: 22px;
+/* Liên kết trong footer (nếu có) */
+footer a {
+    color: #1abc9c; /* Màu liên kết */
+    text-decoration: none; /* Loại bỏ gạch chân */
     font-weight: bold;
 }
 
-/* Thông báo (login_notify) */
-.login_notify {
-    margin-bottom: 15px;
-    padding: 10px 15px;
-    background-color: #ffeeba; /* Màu vàng nhạt */
-    color: #856404; /* Màu chữ vàng đậm */
-    border: 1px solid #ffeeba; /* Viền vàng nhạt */
+footer a:hover {
+    color: #16a085; /* Màu liên kết khi hover */
+    text-decoration: underline; /* Thêm gạch chân khi hover */
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    footer {
+        font-size: 12px; /* Giảm kích thước chữ trên thiết bị nhỏ */
+        padding: 15px 5px; /* Điều chỉnh khoảng cách */
+    }
+}
+
+
+/* Page Login AND Register */
+/* Form Common Styles (áp dụng cho cả đăng nhập và đăng ký) */
+.form_login, .form_register {
+    width: 100%;
+    max-width: 400px; /* Giới hạn chiều rộng form */
+    margin: 50px auto; /* Căn giữa form */
+    padding: 20px 30px; /* Khoảng cách bên trong form */
+    background-color: #f1f1f1; /* Màu nền form */
+    border-radius: 10px; /* Bo góc form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng form */
+    text-align: center;
+}
+
+.form_login h2, .form_register h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Notification Styles (thông báo đăng nhập) */
+.login_notify{
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e74c3c; /* Màu đỏ cảnh báo */
+    color: white;
+    font-weight: bold;
     border-radius: 5px;
     text-align: center;
 }
 
-.login_notify h4 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: normal;
-}
-
-/* Trường nhập liệu */
-.form_login input[type="email"],
-.form_login input[type="password"] {
+/* Input Fields */
+.form_login input, .form_register input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ccc; /* Viền nhạt */
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
+    background-color: white;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    transition: border-color 0.3s ease;
 }
 
-.form_login input:focus {
+.form_login input:focus, .form_register input:focus {
+    border-color: #3498db; /* Màu xanh khi focus */
     outline: none;
-    border-color: #004080; /* Viền xanh dương khi focus */
-    box-shadow: 0 0 5px rgba(0, 64, 128, 0.5); /* Hiệu ứng đổ bóng */
 }
 
-/* Nút đăng nhập */
-.form_login button {
+/* Submit Button */
+.form_login button, .form_register button {
     width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #004080; /* Màu xanh dương */
-    color: #ffffff; /* Chữ trắng */
+    padding: 12px;
+    background-color: #3498db; /* Màu xanh cho nút */
+    color: white;
     font-size: 16px;
     font-weight: bold;
     border: none;
@@ -158,113 +216,497 @@ footer p {
     transition: background-color 0.3s ease;
 }
 
-.form_login button:hover {
-    background-color: #003060; /* Màu xanh dương đậm hơn khi hover */
+.form_login button:hover, .form_register button:hover {
+    background-color: #217dbb; /* Màu xanh đậm khi hover */
 }
 
-/* Đoạn văn bản dưới form */
-.form_login p {
+/* Link (chuyển đổi giữa đăng nhập và đăng ký) */
+.form_login p, .form_register p {
     margin-top: 15px;
-    color: #333;
     font-size: 14px;
+    color: #555;
 }
 
-.form_login a {
-    color: #004080;
+.form_login a, .form_register a {
+    color: #3498db;
+    font-weight: bold;
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.form_login a:hover {
-    text-decoration: underline;
+.form_login a:hover, .form_register a:hover {
+    color: #217dbb; /* Đổi màu khi hover */
 }
 
-/* Page Register */
-/* Form Register Container */
-.form_register {
-    width: 400px; /* Chiều rộng của form */
-    margin: 50px auto; /* Căn giữa theo chiều ngang và tạo khoảng cách trên */
-    padding: 25px;
-    background-color: #f9f9f9; /* Màu nền nhẹ nhàng */
-    border: 1px solid #ddd; /* Viền nhẹ */
-    border-radius: 8px; /* Bo tròn các góc */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
-    font-family: Arial, sans-serif;
-    text-align: center; /* Căn giữa nội dung trong form */
-}
-
-/* Tiêu đề của form */
-.form_register h2 {
+/* Notification Styles (thông báo đăng ký thành công) */
+.register_notify {
     margin-bottom: 20px;
-    color: #333; /* Màu chữ */
-    font-size: 24px;
-    font-weight: bold;
-}
-
-/* Input Fields */
-.form_register input[type="text"],
-.form_register input[type="email"],
-.form_register input[type="password"] {
-    width: 100%; /* Chiều rộng full */
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px; /* Bo góc cho input */
-    font-size: 16px;
-    box-sizing: border-box; /* Không vượt quá kích thước container */
-}
-
-.form_register input:focus {
-    outline: none;
-    border-color: #004080; /* Màu xanh đậm khi focus */
-    box-shadow: 0 0 5px rgba(0, 64, 128, 0.5); /* Đổ bóng nhẹ */
-}
-
-/* Submit Button */
-.form_register button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #004080; /* Màu xanh đậm */
-    color: #fff; /* Chữ màu trắng */
-    font-size: 16px;
+    background-color: #2ecc71; /* Màu xanh lá cho thông báo thành công */
+    color: white;
     font-weight: bold;
-    border: none;
     border-radius: 5px;
-    cursor: pointer; /* Con trỏ chuột */
+    text-align: center;
+}
+
+/*Header ADM*/
+/* body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    color: white;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.navigation {
+    display: flex;
+    gap: 20px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    flex: 0.8;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    padding: 0 15px; Thêm khoảng cách ngang giữa các liên kết
+}
+
+
+.logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer
+} */
+
+/* Admin: Manage User */
+/* Căn giữa bảng trong container */
+.user-table.user-management {
+    width: 80%; /* Chiều rộng bảng */
+    margin: 20px auto; /* Căn giữa bảng */
+    border-collapse: collapse; /* Hợp nhất viền bảng */
+    font-family: Arial, sans-serif; /* Font chữ */
+    background-color: #f9f9f9; /* Màu nền nhạt */
+    border-radius: 8px; /* Bo góc bảng */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    overflow: hidden; /* Ẩn phần viền ngoài */
+}
+
+/* Tiêu đề bảng */
+.user-table.user-management .table-header {
+    padding: 12px;
+    background-color: #4CAF50; /* Màu xanh lá đậm */
+    color: white;
+    text-align: center; /* Căn giữa văn bản */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Dòng dữ liệu */
+.user-table.user-management .table-row {
+    border-bottom: 1px solid #ddd; /* Viền dưới của mỗi dòng */
+}
+
+.user-table.user-management .table-cell {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    text-align: left; /* Căn lề trái */
+}
+
+/* Căn giữa 2 nút Xóa và Lịch sử trong ô hoạt động */
+.user-table.user-management .table-cell-actions {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    padding: 0 20px; /* Thêm khoảng cách 20px ở hai bên của ô */
+}
+
+/* Định dạng dấu phân cách giữa các nút */
+.user-table.user-management .separator {
+    margin: 0 10px; /* Thêm khoảng cách giữa dấu | và các nút */
+    color: #333; /* Màu chữ của dấu phân cách */
+    font-size: 16px; /* Kích thước chữ của dấu phân cách */
+}
+
+/* Nút Xóa */
+.user-table.user-management .delete-button {
+    background-color: #e74c3c; /* Màu đỏ */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
-.form_register button:hover {
-    background-color: #003060; /* Màu đậm hơn khi hover */
+.user-table.user-management .delete-button:hover {
+    background-color: #c0392b; /* Màu đỏ khi hover */
 }
 
-/* Đoạn văn bản và liên kết dưới form */
-.form_register p {
-    margin-top: 15px;
-    color: #333;
-    font-size: 14px;
+.user-table.user-management .delete-button:focus {
+    outline: none;
 }
 
-.form_register a {
-    color: #004080; /* Màu xanh cho liên kết */
+/* Nút Lịch sử mượn */
+.user-table.user-management .button-borrow-records {
+    background-color: #3498db; /* Màu xanh dương */
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-}
-
-.form_register a:hover {
-    text-decoration: underline; /* Gạch chân khi hover */
-}
-
-
-/* Thông báo đăng ký */
-.register_notify {
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #9bff9b;
-    color: #00ff00; 
-    border: 1px solid #00ff00;
+    padding: 8px 16px;
     border-radius: 5px;
-    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.user-table.user-management .button-borrow-records:hover {
+    background-color: #2980b9; /* Màu xanh dương đậm khi hover */
+}
+
+/* Dòng không có dữ liệu */
+.user-table.user-management .no-data {
     text-align: center;
+    color: #999;
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* Hiệu ứng hover */
+.user-table.user-management .table-row:hover {
+    background-color: #f1f1f1; /* Màu nền khi hover */
+}
+
+/* Căn chỉnh các ô tiêu đề và dữ liệu */
+.user-table.user-management th.table-header,
+.user-table.user-management td.table-cell {
+    text-align: center; /* Căn giữa văn bản trong các ô */
+}
+
+/* Tiêu đề quản lý người dùng */
+.manage-user {
+    text-align: center; /* Căn giữa chữ */
+    font-size: 32px; /* Kích thước chữ lớn */
+    font-weight: bold; /* Đậm chữ */
+    color: #4CAF50; /* Màu xanh lá đậm cho chữ */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng cho chữ */
+    margin-top: 30px; /* Khoảng cách trên */
+    padding: 20px 0; /* Khoảng cách dưới */
+    font-family: 'Arial', sans-serif; /* Phông chữ */
+}
+  
+/* Add Book */
+/* Container chính của form */
+.book-form-container {
+    width: 50%; /* Chiều rộng của form */
+    margin: 30px auto; /* Căn giữa form */
+    padding: 20px 30px;
+    background-color: #f4f4f4; /* Màu nền nhạt */
+    border-radius: 10px; /* Bo góc form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+    font-family: Arial, sans-serif;
+    text-align: center; /* Căn giữa tiêu đề */
+}
+
+/* Tiêu đề của form */
+.book-form-container h3 {
+    font-size: 24px;
+    color: #4CAF50; /* Màu xanh lá cây */
+    margin-bottom: 20px;
+}
+
+/* Các input trong form */
+.book-form-container input[type="text"],
+.book-form-container input[type="number"] {
+    width: 90%; /* Chiều rộng của input */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Viền màu xám nhạt */
+    border-radius: 5px; /* Bo góc input */
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Placeholder style */
+.book-form-container input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Nút bấm trong form */
+.book-form-container button {
+    width: 95%; /* Chiều rộng nút bấm */
+    padding: 12px;
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white; /* Màu chữ */
+    border: none;
+    border-radius: 5px; /* Bo góc nút */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+/* Hover và focus của nút */
+.book-form-container button:hover {
+    background-color: #45a049; /* Màu xanh lá đậm hơn khi hover */
+}
+
+.book-form-container button:focus {
+    outline: none;
+}
+
+/* Hiệu ứng hover và focus của input */
+.book-form-container input:focus {
+    border-color: #4CAF50; /* Viền màu xanh khi focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+/* Manage Books */
+/* Căn giữa bảng sách trong container */
+.book-table {
+    width: 90%; /* Chiều rộng bảng */
+    margin: 20px auto; /* Căn giữa bảng */
+    border-collapse: collapse; /* Xóa khoảng cách giữa các ô */
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Màu nền nhạt */
+    border-radius: 12px; /* Bo góc 4 góc của bảng */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho bảng */
+    overflow: hidden; /* Cắt bớt phần thừa */
+}
+
+/* Tiêu đề bảng */
+.book-table thead {
+    background-color: #4CAF50; /* Màu xanh lá đậm */
+    color: white;
+    font-weight: bold;
+    text-align: center; /* Căn giữa văn bản */
+    font-size: 16px;
+}
+
+/* Các ô tiêu đề */
+.book-table th {
+    padding: 12px;
+}
+
+/* Dòng dữ liệu */
+.book-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.book-table td {
+    padding: 12px;
+    font-size: 14px;
+    color: #333;
+    text-align: center; /* Căn giữa văn bản */
+}
+
+/* Nút Xóa */
+.book-table .delete-button {
+    background-color: #e74c3c; /* Màu đỏ */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút Xóa */
+.book-table .delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Nút Sửa */
+.book-table .edit-button {
+    background-color: #f39c12; /* Màu cam */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút Sửa */
+.book-table .edit-button:hover {
+    background-color: #e67e22;
+}
+
+/* Dòng không có dữ liệu */
+.book-table .no-data {
+    text-align: center;
+    color: #999;
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* Hiệu ứng hover cho các dòng */
+.book-table tbody tr:hover {
+    background-color: #f1f1f1; /* Màu nền khi hover */
+}
+
+/* Căn chỉnh các ô tiêu đề và dữ liệu */
+.book-table th, .book-table td {
+    text-align: center; /* Căn giữa văn bản trong các ô */
+}
+
+/* Tiêu đề quản lý sách */
+.manage-book {
+    text-align: center; /* Căn giữa chữ */
+    font-size: 32px; /* Kích thước chữ lớn */
+    font-weight: bold; /* Đậm chữ */
+    color: #4CAF50; /* Màu xanh lá đậm cho chữ */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng cho chữ */
+    margin-top: 30px; /* Khoảng cách trên */
+    padding: 20px 0; /* Khoảng cách dưới */
+    font-family: 'Arial', sans-serif; /* Phông chữ */
+}
+
+/* Container của nút "Thêm sách" */
+.button-addbook {
+    text-align: center; /* Căn giữa nội dung bên trong container */
+    margin-top: 30px; /* Khoảng cách từ trên */
+}
+
+/* Container của nút "Thêm sách" */
+.button-addbook {
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung bên trong container */
+    margin-top: 30px; /* Khoảng cách từ trên */
+}
+
+/* Nút "Thêm sách" */
+.button-addbook a {
+    display: inline-block; /* Làm cho nút có thể căn giữa */
+    background-color: #4CAF50; /* Màu xanh lá */
+    color: white; /* Màu chữ trắng */
+    padding: 12px 24px; /* Khoảng cách xung quanh chữ */
+    text-align: center; /* Căn giữa nội dung trong nút */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    border-radius: 5px; /* Bo góc nút */
+    text-decoration: none; /* Bỏ gạch dưới */
+    transition: background-color 0.3s ease; /* Hiệu ứng thay đổi màu nền khi hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+}
+
+/* Màu khi hover */
+.button-addbook a:hover {
+    background-color: #45a049; /* Màu khi hover */
+}
+
+.button-addbook a:focus {
+    outline: none; /* Bỏ viền khi nút được chọn */
+}
+/* Nút "Thêm sách" */
+.button-addbook {
+    display: inline-block; /* Biến nó thành phần tử inline để căn giữa dễ dàng */
+    background-color: #4CAF50; /* Màu nền xanh lá */
+    color: white; /* Màu chữ trắng */
+    padding: 12px 24px; /* Khoảng cách xung quanh chữ */
+    font-size: 16px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+    text-align: center; /* Căn giữa chữ trong nút */
+    border-radius: 5px; /* Bo góc nút */
+    text-decoration: none; /* Bỏ gạch dưới */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Hiệu ứng thay đổi màu và phóng to */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng nhẹ */
+    margin: 0 auto; /* Căn giữa nút trong container */
+    display: block; /* Đảm bảo nút là block-level element */
+    width: fit-content; /* Kích thước nút tự động theo nội dung */
+}
+
+/* Hiệu ứng khi hover */
+.button-addbook:hover {
+    background-color: #45a049; /* Màu khi hover */
+    transform: scale(1.05); /* Phóng to nút khi hover */
+}
+
+/* Hiệu ứng khi focus */
+.button-addbook:focus {
+    outline: none; /* Bỏ viền khi nút được chọn */
+}
+
+/* Dashboard */
+/* Căn giữa toàn bộ container chứa các ô quản lý sách và người dùng */
+.management-container {
+    display: flex;
+    justify-content: space-between; /* Căn hai ô thành hai bên */
+    margin: 20px auto;
+    max-width: 1000px; /* Giới hạn chiều rộng container */
+}
+
+/* Định dạng cho từng ô quản lý sách và người dùng */
+.management-box {
+    width: 48%; /* Căn mỗi ô chiếm 48% chiều rộng của container */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Căn các phần tử ở dưới cùng */
+}
+
+/* Định dạng cho tiêu đề trong mỗi box */
+.management-box h4 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Định dạng cho thông tin bên dưới tiêu đề */
+.management-box h6 {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Định dạng cho các nút quản lý */
+.button-manageBooks, .button-manageUser {
+    margin-top: 10px;
+    background-color: #1e90ff; /* Màu xanh nước biển */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.button-manageBooks:hover, .button-manageUser:hover {
+    background-color: #4682b4; /* Màu xanh nước biển đậm khi hover */
 }

@@ -1,21 +1,31 @@
 package com.model;
 
 public class User {
+	private int user_id;
 	private String fname;
-	private String email;
 	private String password;
+	private String email;
 	private String role;
 	
 	public User() {
 		super();
 	}
 
-	public User(String fname, String email, String password, String role) {
+	public User(int user_id, String fname, String password, String email, String role) {
 		super();
+		this.user_id = user_id;
 		this.fname = fname;
-		this.email = email;
 		this.password = password;
+		this.email = email;
 		this.role = role;
+	}
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getFname() {
@@ -26,20 +36,20 @@ public class User {
 		this.fname = fname;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
 	public String getPassword() {
 		return password;
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getRole() {
@@ -49,5 +59,6 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
-
+	
+	
 }

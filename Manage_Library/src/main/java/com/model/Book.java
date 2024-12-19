@@ -1,40 +1,40 @@
 package com.model;
 
 public class Book {
-	private int bookId;
-    private String title;
-    private String author;
-    private String publisher;
-    private int publicationYear;
-    private String isbn;
-    private int category;
-    private int quantity;
-    private String image;
-
-    public Book() {
+	private int book_id;
+	private String title;
+	private String author;
+	private String publisher;
+	private String publication_year;
+	private String isbn; 
+	private String category;
+	private String quantity;
+	private String image;
+	 
+	public Book() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	// Constructor, getters, and setters
-    public Book(int bookId, String title, String author, String publisher, int publicationYear, String isbn, int category, int quantity, String image) {
-        this.bookId = bookId;
-        this.title = title;
-        this.author = author;
-        this.publisher = publisher;
-        this.publicationYear = publicationYear;
-        this.isbn = isbn;
-        this.category = category;
-        this.quantity = quantity;
-        this.image = image;
-    }
-
-	public int getBookId() {
-		return bookId;
+	public Book(int book_id, String title, String author, String publisher, String publication_year, String isbn,
+			String category, String quantity, String image) {
+		super();
+		this.book_id = book_id;
+		this.title = title;
+		this.author = author;
+		this.publisher = publisher;
+		this.publication_year = publication_year;
+		this.isbn = isbn;
+		this.category = category;
+		this.quantity = quantity;
+		this.image = image;
 	}
 
-	public void setBookId(int bookId) {
-		this.bookId = bookId;
+	public int getBook_id() {
+		return book_id;
+	}
+
+	public void setBook_id(int book_id) {
+		this.book_id = book_id;
 	}
 
 	public String getTitle() {
@@ -61,12 +61,12 @@ public class Book {
 		this.publisher = publisher;
 	}
 
-	public int getPublicationYear() {
-		return publicationYear;
+	public String getPublication_year() {
+		return publication_year;
 	}
 
-	public void setPublicationYear(int publicationYear) {
-		this.publicationYear = publicationYear;
+	public void setPublication_year(String publication_year) {
+		this.publication_year = publication_year;
 	}
 
 	public String getIsbn() {
@@ -77,22 +77,6 @@ public class Book {
 		this.isbn = isbn;
 	}
 
-	public int getCategory() {
-		return category;
-	}
-
-	public void setCategory(int category) {
-		this.category = category;
-	}
-
-	public int getQuantity() {
-		return quantity;
-	}
-
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
-	}
-	
     public String getImage() {
         return image;
     }
@@ -100,4 +84,20 @@ public class Book {
     public void setImage(String image) {
         this.image = image;
     }
+    
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(String quantity) {
+		this.quantity = quantity;
+	}
 }
