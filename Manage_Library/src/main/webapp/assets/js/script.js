@@ -20,3 +20,10 @@ function validateForm() {
 
     return true; // Nếu tất cả điều kiện đều hợp lệ, form sẽ được gửi đi
 }
+
+/* HOME */
+function borrowBook(bookId) {
+    // Gửi yêu cầu mượn sách đến server (có thể sử dụng AJAX hoặc chuyển hướng đến một trang khác)
+    alert("Mượn sách với ID: " + bookId);
+    // Thực hiện các hành động khác như gửi yêu cầu đến server
+}

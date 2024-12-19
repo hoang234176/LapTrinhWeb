@@ -7,9 +7,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="styles.css">
-<title>Thư Viện Sách</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<title>Thư Viện Sách</title>
+	<link rel="stylesheet" href="/Manage_Library/assets/css/style.css">
+	<script src="/Manage_Library/assets/js/script.js"></script>
 </head>
 <body>
     <jsp:include page="includes/header.jsp" />
@@ -38,13 +40,5 @@
     </div>
     
     <jsp:include page="includes/footer.jsp" />
-    
-    <script>
-    function borrowBook(bookId) {
-        // Gửi yêu cầu mượn sách đến server (có thể sử dụng AJAX hoặc chuyển hướng đến một trang khác)
-        alert("Mượn sách với ID: " + bookId);
-        // Thực hiện các hành động khác như gửi yêu cầu đến server
-    }
-    </script>
 </body>
 </html>

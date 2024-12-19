@@ -21,7 +21,8 @@
             <input type="text" name="isbn" placeholder="ISBN" required>
             <input type="text" name="category" placeholder="Thể loại" required>
             <input type="number" name="quantity" placeholder="Số lượng" required>
-            <button type="submit">Thêm Sách</button>
+            <input type="file" name="image" required>
+            <button type="submit">Thêm</button>
         </form>
     </div>
     
