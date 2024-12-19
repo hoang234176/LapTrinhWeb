@@ -34,7 +34,7 @@ public class BookDAO {
             preparedStatement.setString(5, book.getIsbn());
             preparedStatement.setString(6, book.getCategory());
             preparedStatement.setString(7, book.getQuantity());
-
+         
             int result = preparedStatement.executeUpdate();
 
             connection.close();
@@ -68,6 +68,7 @@ public class BookDAO {
     			book.setIsbn(resultSet.getString("isbn"));
     			book.setCategory(resultSet.getString("category"));
     			book.setQuantity(resultSet.getString("quantity"));
+    			book.setImage(resultSet.getString("image"));
     			books.add(book);
     		}
     				
@@ -76,5 +77,4 @@ public class BookDAO {
         }
 		return books;
     }
-
 }

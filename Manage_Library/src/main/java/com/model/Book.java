@@ -9,13 +9,14 @@ public class Book {
 	private String isbn; 
 	private String category;
 	private String quantity;
+	private String image;
 	 
 	public Book() {
 		super();
 	}
 
 	public Book(int book_id, String title, String author, String publisher, String publication_year, String isbn,
-			String category, String quantity) {
+			String category, String quantity, String image) {
 		super();
 		this.book_id = book_id;
 		this.title = title;
@@ -25,6 +26,7 @@ public class Book {
 		this.isbn = isbn;
 		this.category = category;
 		this.quantity = quantity;
+		this.image = image;
 	}
 
 	public int getBook_id() {
@@ -75,6 +77,14 @@ public class Book {
 		this.isbn = isbn;
 	}
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+    
 	public String getCategory() {
 		return category;
 	}
@@ -90,6 +100,4 @@ public class Book {
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
-	 
-	 
 }

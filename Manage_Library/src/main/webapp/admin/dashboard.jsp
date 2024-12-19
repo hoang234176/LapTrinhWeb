@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Trang Admin</title>
-<link rel="stylesheet" href="/Manage_Library/assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="../assets/css/style.css">
 </head>
 <body>
 	<jsp:include page="../includes/headerADM.jsp"/>
