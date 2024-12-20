@@ -779,4 +779,39 @@ h1 {
     color: #666;
 }
 
+/* Manage_Library/src/main/webapp/assets/css/profile.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.user-info {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details {
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    color: #555;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+strong {
+    color: #333;
+}
 

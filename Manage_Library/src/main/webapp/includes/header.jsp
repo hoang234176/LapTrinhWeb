@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% String role = (String) session.getAttribute("role");%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,20 @@
 	    <nav>
 	        <ul>
 	            <li><a href="/Manage_Library/index.jsp">Trang chủ</a></li>
-	            <li><a href="/Manage_Library/auth/login.jsp">Đăng nhập</a></li>
-	            <li><a href="/Manage_Library/auth/register.jsp">Đăng ký</a></li>
-	            <li><a href="/Manage_Library/auth/logout.jsp" class="logout-btn">Đăng xuất</a></li>
+	            <% 
+	            	if (role == null){
+	            %>
+	            
+			            <li><a href="/Manage_Library/auth/login.jsp">Đăng nhập</a></li>
+			            <li><a href="/Manage_Library/auth/register.jsp">Đăng ký</a></li>          		
+	            <%	
+	            	} else {
+	            %>
+	            	<li><a href="/Manage_Library/views/Profile.jsp">Hồ Sơ</a></li>
+		            <li><a href="/Manage_Library/auth/logout.jsp" class="logout-btn">Đăng xuất</a></li>
+				<%	            		
+	            	}
+	            %>
 	        </ul>
 	    </nav>
 	</header>

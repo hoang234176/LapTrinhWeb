@@ -49,14 +49,15 @@ public class LoginController extends HttpServlet {
 		HttpSession session = request.getSession();
 		
 		if (user != null) {
+			session.setAttribute("userId", user.getUser_id());
 		    session.setAttribute("fname", user.getFname());
 		    session.setAttribute("role", user.getRole());
 		    
 		    if ("Admin".equalsIgnoreCase(user.getRole())) {
-		        getServletContext().getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
-		    } else {
-		        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-		    }
+                getServletContext().getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
+            } else if ("User".equalsIgnoreCase(user.getRole())) {
+                getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+            }
 		} else {
 		    // Xử lý khi không tìm thấy user
 		    request.setAttribute("message", "Tài khoản hoặc mật khẩu sai!");

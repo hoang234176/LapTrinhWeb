@@ -18,11 +18,9 @@ public class UserDAO {
     private static final String LOGIN_USER = "SELECT * FROM users WHERE email = ? AND password = ?";
     private static final String INSERT_USER = "INSERT INTO Users (fname, password, email, role) VALUES (?, ?, ?, ?)";
     private static final String ALL_USER = "SELECT * FROM users WHERE role = 'User'";
+    private static final String USER = "SELECT * FROM users WHERE role = 'User' AND user_id = ?";
     
     public User loginUser(String email, String password) {
-    	int user_id = 1;
-    	String role = null;
-    	String fname = null;
     	User user = null;
     	try {
     		// Step 1: Tải driver MySQL
@@ -38,9 +36,10 @@ public class UserDAO {
 		    ResultSet resultSet = preparedStatement.executeQuery();
 		    
 		    if (resultSet.next()) {
-		    	//Lấy giá trị role để xử lý duy trì đăng nhập
-		    	role = resultSet.getString("role");
-		    	fname = resultSet.getString("fname");
+		    	//Lấy giá trị user_id từ kết quả truy vấn
+		    	int user_id = resultSet.getInt("user_id");
+		    	String role = resultSet.getString("role");
+		    	String fname = resultSet.getString("fname");
 		    	user = new User(user_id, fname, email, password, role);
 		    }
 		   
@@ -97,7 +96,6 @@ public class UserDAO {
     		
     		while (resultSet.next()) {
     			User user = new User();
-    			user.setUser_id(resultSet.getInt("user_id"));
     			user.setFname(resultSet.getString("fname"));
     			user.setPassword(resultSet.getString("password"));
     			user.setEmail(resultSet.getString("email"));
@@ -110,5 +108,33 @@ public class UserDAO {
             e.printStackTrace();
         }
 		return users;
+    }
+    
+    // Thực hiện truy vấn để lấy thông tin người dùng từ cơ sở dữ liệu
+    public User getUserById(int userId) {
+        User user = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+            PreparedStatement statement = connection.prepareStatement(USER);
+            statement.setInt(1, userId);
+            ResultSet resultSet = statement.executeQuery();
+             if (resultSet.next()) {
+                user = new User();
+                user.setUser_id(resultSet.getInt("user_id")); // Đảm bảo rằng bạn đang sử dụng đúng tên cột
+                user.setFname(resultSet.getString("fname"));
+                user.setPassword(resultSet.getString("password"));
+                user.setEmail(resultSet.getString("email"));
+                user.setRole(resultSet.getString("role"));
+            }
+             resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 }
