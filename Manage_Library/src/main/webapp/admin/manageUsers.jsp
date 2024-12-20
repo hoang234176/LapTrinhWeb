@@ -17,7 +17,12 @@
 	<div class="manage-user">
     	<h2>Quản lý người dùng</h2>
     </div>
-    
+    <% String message = (String) request.getAttribute("message"); %>
+		<% if (message != null) { %>
+		    <div class="manageUser_notify">
+		        <h4><%= message %></h4>
+		    </div>
+	<% } %>
 	<table class="user-table user-management">
 	    <thead>
 	        <tr>
@@ -47,7 +52,10 @@
 				        <button type="submit" class="delete-button" onclick="return confirm('Bạn chắc chắn muốn xóa người dùng này?');">Xóa</button>
 				    </form>
 				    <span class="separator">|</span> <!-- Dấu phân cách giữa hai nút -->
-				    <a href="borrowRecords.jsp" class="button-borrow-records">Lịch sử</a>
+				    <form action="/Manage_Library/RecordUserController" method="post">
+				        <input type="hidden" name="recordsUser" value="<%= user.getUser_id() %>">
+				        <button type="submit" class="button-borrow-records">Lịch sử</button>
+				    </form>
 				</td>
 	        </tr>
 	    <%
