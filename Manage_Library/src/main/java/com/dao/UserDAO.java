@@ -18,6 +18,9 @@ public class UserDAO {
     private static final String LOGIN_USER = "SELECT * FROM users WHERE email = ? AND password = ?";
     private static final String INSERT_USER = "INSERT INTO Users (fname, password, email, role) VALUES (?, ?, ?, ?)";
     private static final String ALL_USER = "SELECT * FROM users WHERE role = 'User'";
+    private static final String DEL_USER = "DELETE FROM users WHERE user_id = ?";
+    private static final String DEL_USER_RECORD = "DELETE FROM borrowrecords WHERE user_id = ?";
+    
     
     public User loginUser(String email, String password) {
     	int user_id = 1;
@@ -111,4 +114,50 @@ public class UserDAO {
         }
 		return users;
     }
+    
+    public boolean deleteUserRecord(int user_id) {
+    	try {
+    		// Step 1: Tải driver MySQL
+    		Class.forName("com.mysql.cj.jdbc.Driver");
+    		
+    		// Step 2: Tạo kết nối
+    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+    		
+    		// Step 3: Tạo và thực thi câu lệnh SQL
+    		PreparedStatement preparedStatement = connection.prepareStatement(DEL_USER_RECORD);
+    		preparedStatement.setInt(1, user_id);
+    		
+    		int result = preparedStatement.executeUpdate();
+            
+            connection.close();
+            return result > 0;
+    	} catch (Exception e) {
+            e.printStackTrace();
+        }
+    	return false;
+    }
+    
+    public boolean deleteUser(int user_id) {
+    	try {
+    		// Step 1: Tải driver MySQL
+    		Class.forName("com.mysql.cj.jdbc.Driver");
+    		
+    		// Step 2: Tạo kết nối
+    		Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD);
+    		
+    		// Step 3: Tạo và thực thi câu lệnh SQL
+    		PreparedStatement preparedStatement = connection.prepareStatement(DEL_USER);
+    		preparedStatement.setInt(1, user_id);
+    		
+    		int result = preparedStatement.executeUpdate();
+            
+            connection.close();
+            return result > 0;
+    	} catch (Exception e) {
+            e.printStackTrace();
+        }
+    	return false;
+    }
+    
+    
 }

@@ -24,7 +24,7 @@
   	<location>/errorPage/er500.jsp</location>
   </error-page>
   
- <!-- Bảo mật các trang admin
+<!--  Bảo mật các trang admin
   <security-constraint>
   	<web-resource-collection>
   		<web-resource-name>Admin Pages</web-resource-name>

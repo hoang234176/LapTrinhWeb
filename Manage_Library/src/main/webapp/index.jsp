@@ -4,6 +4,10 @@
 <%@ page import="com.dao.BookDAO" %>
 <%@ page import="com.model.Book" %>
 <%@ page import="java.util.List" %>
+<%
+	int user_id = (Integer) session.getAttribute("user_id");
+	String fname = (String) session.getAttribute("fname");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +20,19 @@
 <body>
     <jsp:include page="includes/header.jsp" />
     
-    <h1>Trang chủ</h1>
+    <%
+    	if (fname == null) {
+    %>
+    	<h1>Website thư viện xin chào bạn.</h1>
+    <%		
+    	} else {
+    %>
+		    <h1>Chào mừng <%= fname %>.</h1>
+		    <h1>Chúc bạn một ngày vui vẻ.</h1>
+    <%		
+    	}
+    %>
+    
     
     <div class="book-list">
         <%

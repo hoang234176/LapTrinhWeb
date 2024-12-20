@@ -5,24 +5,21 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
-
 import java.io.IOException;
 
 import com.dao.UserDAO;
-import com.model.User;
 
 /**
- * Servlet implementation class LoginController
+ * Servlet implementation class DeleteUserController
  */
-@WebServlet("/LoginController")
-public class LoginController extends HttpServlet {
+@WebServlet("/DeleteUserController")
+public class DeleteUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public LoginController() {
+    public DeleteUserController() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,28 +37,23 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+		String delete_id = request.getParameter("delete_id");
+		int user_id = Integer.parseInt(delete_id);
 		
 		UserDAO userDAO = new UserDAO();
-		User user = userDAO.loginUser(email, password);
-		
-		HttpSession session = request.getSession();
-		
-		if (user != null) {
-			session.setAttribute("user_id", user.getUser_id());
-		    session.setAttribute("fname", user.getFname());
-		    session.setAttribute("role", user.getRole());
-		    
-		    if ("Admin".equalsIgnoreCase(user.getRole())) {
-		        getServletContext().getRequestDispatcher("/admin/dashboard.jsp").forward(request, response);
-		    } else {
-		        getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-		    }
+		boolean DelUserRecord = userDAO.deleteUserRecord(user_id);
+		if (DelUserRecord) {
+			boolean DelUser = userDAO.deleteUser(user_id);
+			if (DelUser) {
+				request.setAttribute("message", "Đã xóa một tài khỏi hệ thống!!");
+				getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
+			} else {
+				request.setAttribute("message", "Không thể xóa người dùng!!");
+				getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
+			}
 		} else {
-		    // Xử lý khi không tìm thấy user
-		    request.setAttribute("message", "Tài khoản hoặc mật khẩu sai!");
-		    getServletContext().getRequestDispatcher("/auth/login.jsp").forward(request, response);
+			request.setAttribute("message", "Không thể xóa người dùng trong record!!");
+			getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
 		}
 	}
 

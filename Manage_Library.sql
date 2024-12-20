@@ -71,3 +71,8 @@ INSERT INTO BorrowRecords (user_id, book_id, borrow_date, return_date, status) V
 (4, 3, '2024-12-08', NULL, 'Borrowed'),
 (5, 4, '2024-12-10', '2024-12-15', 'Returned'),
 (3, 5, '2024-12-11', NULL, 'Borrowed');
+
+SELECT fname, title, borrow_date, return_date, status
+FROM Users INNER JOIN BorrowRecords ON Users.user_id = BorrowRecords.user_id 
+INNER JOIN Books ON BorrowRecords.book_id = Books.book_id
+WHERE Users.user_id = 3;
