@@ -12,14 +12,11 @@
 	
 	<div class="management-container">
 	    <div class="management-box">
-	        <h4>Sách</h4>
-	        <h6>Số loại sách: </h6>
-	        <h6>Tổng số lượng sách: </h6>
+	        <h3>Sách</h3>
 	        <a href="/Manage_Library/admin/manageBooks.jsp" class="button-manageBooks">Quản lý Sách</a>
 	    </div>
 	    <div class="management-box">
-	        <h4>Người dùng</h4>
-	        <h6>Tổng số người dùng: </h6>
+	        <h3>Người dùng</h3>
 	        <a href="/Manage_Library/admin/manageUsers.jsp" class="button-manageUser">Quản lý người dùng</a>
 	    </div>
 	</div>

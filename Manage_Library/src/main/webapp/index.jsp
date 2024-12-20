@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*" %>
 <%@ page import="com.dao.BookDAO" %>
 <%@ page import="com.model.Book" %>
-<%@ page import="java.util.List" %>
+<%@ page import="java.util.*" %>
 <%
 	int user_id = (Integer) session.getAttribute("user_id");
 	String fname = (String) session.getAttribute("fname");

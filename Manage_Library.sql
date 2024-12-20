@@ -23,7 +23,7 @@ CREATE TABLE Books (
     title VARCHAR(255) NOT NULL,
     author VARCHAR(100) NOT NULL,
     publisher VARCHAR(100),
-    publication_year YEAR,
+    publication_year VARCHAR(4),
     isbn VARCHAR(20) UNIQUE,
     category INT,
     quantity INT DEFAULT 1,
@@ -51,11 +51,11 @@ INSERT INTO Categories (category_name) VALUES
 ('Biography');
 
 INSERT INTO Books (title, author, publisher, publication_year, isbn, category, quantity, image) VALUES
-('To Kill a Mockingbird', 'Harper Lee', 'J.B. Lippincott & Co.', 1960, '9780060935467', 1, 5, 'ToKillaMockingbird.jpg'),
-('A Brief History of Time', 'Stephen Hawking', 'Bantam Books', 1988, '9780553380163', 3, 3, 'BriefHistoryTime.jpg'),
-('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 'Harvill Secker', 2011, '9780099590088', 4, 4, 'ABriefHistoryofHumankind.jpg'),
-('The Diary of a Young Girl', 'Anne Frank', 'Contact Publishing', 1947, '9780553296983', 5, 2, 'TheDiaryofaYoungGirl.jpg'),
-('1984', 'George Orwell', 'Secker & Warburg', 1949, '9780451524935', 1, 6, '1984.jpg');
+('To Kill a Mockingbird', 'Harper Lee', 'J.B. Lippincott & Co.', '1960', '9780060935467', 1, 5, 'ToKillaMockingbird.jpg'),
+('A Brief History of Time', 'Stephen Hawking', 'Bantam Books', '1988', '9780553380163', 3, 3, 'BriefHistoryTime.jpg'),
+('Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 'Harvill Secker', '2011', '9780099590088', 4, 4, 'ABriefHistoryofHumankind.jpg'),
+('The Diary of a Young Girl', 'Anne Frank', 'Contact Publishing', '1947', '9780553296983', 5, 2, 'TheDiaryofaYoungGirl.jpg'),
+('1984', 'George Orwell', 'Secker & Warburg', '1949', '9780451524935', 1, 6, '1984.jpg');
 
 INSERT INTO Users (fname, password, email, role) VALUES
 ('admin', 'admin123', 'admin@example.com', 'Admin'),
@@ -71,8 +71,3 @@ INSERT INTO BorrowRecords (user_id, book_id, borrow_date, return_date, status) V
 (4, 3, '2024-12-08', NULL, 'Borrowed'),
 (5, 4, '2024-12-10', '2024-12-15', 'Returned'),
 (3, 5, '2024-12-11', NULL, 'Borrowed');
-
-SELECT fname, title, borrow_date, return_date, status
-FROM Users INNER JOIN BorrowRecords ON Users.user_id = BorrowRecords.user_id 
-INNER JOIN Books ON BorrowRecords.book_id = Books.book_id
-WHERE Users.user_id = 3;

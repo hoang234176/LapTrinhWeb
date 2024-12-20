@@ -7,8 +7,8 @@ public class Book {
 	private String publisher;
 	private String publication_year;
 	private String isbn; 
-	private String category;
-	private String quantity;
+	private int category;
+	private int quantity;
 	private String image;
 	 
 	public Book() {
@@ -16,7 +16,7 @@ public class Book {
 	}
 
 	public Book(int book_id, String title, String author, String publisher, String publication_year, String isbn,
-			String category, String quantity, String image) {
+			int category, int quantity, String image) {
 		super();
 		this.book_id = book_id;
 		this.title = title;
@@ -77,27 +77,29 @@ public class Book {
 		this.isbn = isbn;
 	}
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-    
-	public String getCategory() {
+	public int getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(int category) {
 		this.category = category;
 	}
 
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	
 }

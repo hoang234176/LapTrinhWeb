@@ -10,11 +10,12 @@ import java.util.List;
 import com.model.RecordsUser;
 
 public class MixedDAO {
-	private String JDBC_URL = "jdbc:mysql://localhost:3306/Manage_Library";
+	private String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/Manage_Library";
     private String JDBC_USER = "root";
     private String JDBC_PASSWORD = "12345678";
     
     private static final String RECORD_USER = "SELECT fname, title, borrow_date, return_date, status FROM Users INNER JOIN BorrowRecords ON Users.user_id = BorrowRecords.user_id INNER JOIN Books ON BorrowRecords.book_id = Books.book_id WHERE Users.user_id = ?;"; 
+
     
     public List<RecordsUser> recordUser(int user_id) {
     	List<RecordsUser> recordsUsers = new ArrayList<>();
@@ -48,4 +49,5 @@ public class MixedDAO {
         }
 		return recordsUsers;
     }
+    
 }

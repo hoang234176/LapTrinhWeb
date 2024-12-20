@@ -45,15 +45,21 @@ public class DeleteUserController extends HttpServlet {
 		if (DelUserRecord) {
 			boolean DelUser = userDAO.deleteUser(user_id);
 			if (DelUser) {
-				request.setAttribute("message", "Đã xóa một tài khỏi hệ thống!!");
+				request.setAttribute("message", "Đã xóa người dùng khỏi hệ thống!!");
 				getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
 			} else {
 				request.setAttribute("message", "Không thể xóa người dùng!!");
 				getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
 			}
 		} else {
-			request.setAttribute("message", "Không thể xóa người dùng trong record!!");
-			getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
+			boolean DelUser = userDAO.deleteUser(user_id);
+			if (DelUser) {
+				request.setAttribute("message", "Đã xóa người dùng khỏi hệ thống!!");
+				getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
+			} else {
+				request.setAttribute("message", "Không thể xóa người dùng!!");
+				getServletContext().getRequestDispatcher("/admin/manageUsers.jsp").forward(request, response);
+			}
 		}
 	}
 

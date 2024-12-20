@@ -43,22 +43,23 @@
 	        %>
 	            <tr>
 	                <td><%= book.getBook_id() %></td>
+	               	<% request.setAttribute("book_id", book.getBook_id()); %>
 	                <td><%= book.getTitle() %></td>
 	                <td><%= book.getAuthor() %></td>
 	                <td><%= book.getPublisher() %></td>
 	                <td><%= book.getPublication_year() %></td>
 	                <td><%= book.getIsbn() %></td>
 	                <td><%= book.getCategory() %></td>
-	                <td><%= book.getQuantity() %></td>
+ 	                <td><%= book.getQuantity() %></td>
 	                <td>
-	                    <form action="DeleteBookController" method="post">
+	                    <form action="/Manage_Library/DeleteBookController" method="post">
 	                        <input type="hidden" name="delete_id" value="<%= book.getBook_id()%>">
 	                        <button type="submit" class="delete-button" onclick="return confirm('Bạn chắc chắn muốn xóa sách này?');">Xóa</button>
 	                    </form>
-	                    <form action="EditBookController" method="post">
-	                        <input type="hidden" name="delete_id" value="<%= book.getBook_id() %>">
+<%-- 	                    <form action="/Manage_Library/GetInfo" method="post">
+	                        <input type="hidden" name="getinfo_id" value="<%= book.getBook_id() %>">
 	                        <button type="submit" class="edit-button">Sửa</button>
-	                    </form>
+	                    </form> --%>
 	                </td>
 	            </tr>
 	        <%
@@ -74,7 +75,7 @@
 	    </tbody>
 	</table>
 
-    <a href="addBook.jsp" class="button-addbook">Thêm sách</a><br>
+    <a href="/Manage_Library/admin/addBook.jsp" class="button-addbook">Thêm sách</a><br>
     
     <jsp:include page="../includes/footer.jsp"/>
 </body>
