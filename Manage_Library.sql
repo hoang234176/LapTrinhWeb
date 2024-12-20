@@ -70,4 +70,8 @@ INSERT INTO BorrowRecords (user_id, book_id, borrow_date, return_date, status) V
 (3, 2, '2024-12-05', NULL, 'Borrowed'),
 (4, 3, '2024-12-08', NULL, 'Borrowed'),
 (5, 4, '2024-12-10', '2024-12-15', 'Returned'),
+<<<<<<< HEAD
 (3, 5, '2024-12-11', NULL, 'Borrowed');
+=======
+(3, 5, '2024-12-11', NULL, 'Borrowed');
+>>>>>>> 673c45fa6731351bb336889e7b20478ca85005e7

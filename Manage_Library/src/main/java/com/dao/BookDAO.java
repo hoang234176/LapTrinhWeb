@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.model.Book;
-import com.model.RecordsUser;
 
 public class BookDAO {
 	private String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/Manage_Library";

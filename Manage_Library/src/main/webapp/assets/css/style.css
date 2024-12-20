@@ -779,4 +779,104 @@ h1 {
     color: #666;
 }
 
+/* Giao diện thông tin người dùng */
+.user-info {
+   max-width: 600px; /* Giới hạn chiều rộng */
+   margin: 40px auto; /* Căn giữa */
+   padding: 30px; /* Khoảng cách bên trong */
+   background-color: #ffffff; /* Màu nền trắng */
+   border-radius: 15px; /* Bo góc mềm mại */
+   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Đổ bóng nhẹ */
+   font-family: 'Arial', sans-serif; /* Font chữ hiện đại */
+}
 
+.user-info h1 {
+   text-align: center; /* Căn giữa tiêu đề */
+   color: #2c3e50; /* Màu chữ xám đậm */
+   font-size: 28px; /* Kích thước tiêu đề */
+   margin-bottom: 10px; /* Khoảng cách dưới */
+}
+
+.user-info img {
+   display: block;
+   margin: 0 auto; /* Căn giữa ảnh */
+   width: 120px; /* Chiều rộng ảnh đại diện */
+   height: 120px; /* Chiều cao ảnh đại diện */
+   border-radius: 50%; /* Bo tròn ảnh đại diện */
+   border: 3px solid #4CAF50; /* Viền ảnh đại diện */
+}
+
+.user-details {
+   margin-top: 20px; /* Khoảng cách trên */
+}
+
+.user-details h2 {
+   font-size: 22px; /* Kích thước chữ */
+   color: #34495e; /* Màu chữ tối */
+   margin-bottom: 10px; /* Khoảng cách dưới */
+}
+
+.user-details p {
+   font-size: 16px; /* Kích thước chữ */
+   color: #7f8c8d; /* Màu chữ xám nhạt */
+   line-height: 1.6; /* Dòng cách */
+}
+
+.user-details a {
+   display: inline-block; /* Hiển thị như nút */
+   margin-top: 15px; /* Khoảng cách trên */
+   padding: 12px 20px; /* Khoảng cách bên trong */
+   background-color: #4CAF50; /* Màu xanh lá */
+   color: white; /* Màu chữ trắng */
+   text-decoration: none; /* Bỏ gạch chân */
+   border-radius: 10px; /* Bo góc */
+   font-weight: bold; /* Chữ đậm */
+   transition: all 0.3s ease; /* Hiệu ứng mượt */
+}
+
+.user-details a:hover {
+   background-color: #45a049; /* Màu khi hover */
+   transform: scale(1.05); /* Hiệu ứng phóng to nhẹ */
+}
+
+trang mượn trả
+/* Tiêu đề trang */
+.page-title {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Bảng thông tin */
+.info-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.info-table thead {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+}
+
+.info-table th, .info-table td {
+    padding: 12px;
+    text-align: center;
+}
+
+.info-table tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+.info-table tbody tr:hover {
+    background-color: #f1f1f1;
+}

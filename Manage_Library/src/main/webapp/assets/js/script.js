@@ -21,9 +21,18 @@ function validateForm() {
     return true; // Nếu tất cả điều kiện đều hợp lệ, form sẽ được gửi đi
 }
 
-/* HOME */
+/* mượn sách */
 function borrowBook(bookId) {
-    // Gửi yêu cầu mượn sách đến server (có thể sử dụng AJAX hoặc chuyển hướng đến một trang khác)
-    alert("Mượn sách với ID: " + bookId);
-    // Thực hiện các hành động khác như gửi yêu cầu đến server
+    // Gửi yêu cầu mượn sách đến servlet
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/Manage_Library/BorrowBookServlet", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            // Xử lý phản hồi từ servlet
+            alert(xhr.responseText); // Hiển thị thông báo
+            location.reload(); // Tải lại trang để cập nhật thông tin
+        }
+    };
+    xhr.send("book_id=" + bookId);
 }
