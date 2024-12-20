@@ -18,7 +18,7 @@
 	<script src="/Manage_Library/assets/js/script.js"></script>
 </head>
 <body>
-    <jsp:include page="includes/header.jsp" />
+	<jsp:include page="includes/header.jsp"/>
     
     <%
     	if (fname == null) {

@@ -21,12 +21,12 @@
 	            <% 
 	            	if (role == null){
 	            %>
-	            
 			            <li><a href="/Manage_Library/auth/login.jsp">Đăng nhập</a></li>
 			            <li><a href="/Manage_Library/auth/register.jsp">Đăng ký</a></li>          		
 	            <%	
 	            	} else {
 	            %>
+	            	<li><a href="/Manage_Library/views/Profile.jsp">Hồ Sơ</a></li>
 		            <li><a href="/Manage_Library/auth/logout.jsp" class="logout-btn">Đăng xuất</a></li>
 				<%	            		
 	            	}
