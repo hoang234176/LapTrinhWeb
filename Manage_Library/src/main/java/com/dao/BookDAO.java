@@ -10,7 +10,7 @@ import java.util.List;
 import com.model.Book;
 
 public class BookDAO {
-    private String JDBC_URL = "jdbc:mysql://localhost:3306/Manage_Library";
+    private String JDBC_URL = "jdbc:mysql://127.0.0.1:3306/Manage_Library";
     private String JDBC_USER = "root";
     private String JDBC_PASSWORD = "12345678";
 
